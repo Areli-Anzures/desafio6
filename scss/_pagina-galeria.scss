@@ -1,0 +1,59 @@
+/*Estilos de Galería*/
+.main-galeria {
+    padding: 160px 0px 0px 0px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    /*animaciones*/
+    .titulo {
+        position: top;
+        top: 50%;
+        width: 24em;
+        margin: 0 auto;
+        font-size: 23px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateY(-50%);
+        animation: typewriter 5s steps(44) 1s 1 normal both;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 12em;
+    }
+}
+
+.contenedor-galeria {
+    width: 100%;
+    
+    .titulo{
+        padding: 70px 10px 0px 0px;
+    }
+
+    .descrip {
+        text-align: justify;
+    }
+}
+
+.mod-edificio, .proy-rev, .proy-ref, .rev-edif{
+    border-style: dashed;
+    border-color: rgb(80, 83, 255);
+    margin-bottom: 10px;
+
+    p{
+        font-family: $tipo-letra;
+        font-size: $letra-cuerpo-sm;
+    }
+}
+

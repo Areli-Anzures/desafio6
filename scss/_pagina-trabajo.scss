@@ -1,0 +1,49 @@
+/* Pagina nuestro trabajo*/
+.main-nuestro-trabajo .container-fluid {
+    margin: 130px 0px 0px 0px !important;
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        color: rgb(33, 20, 156);
+        text-align: center;
+    }
+
+    img {
+        cursor: pointer;
+        transition: all 500ms ease-out;
+    }
+
+    img:hover {
+        transform: scale(1.5);
+    }
+}
+
+/*centrar elementos de cada caja*/
+#proy-estruc,
+#proy-arq,
+#proy-cons,
+#proy-mant,
+#proy-planos {
+    margin: 10px 2px 2px 0px;
+    padding: 0px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    /*imagenes del mismo tamaño*/
+    img {
+        height: 150px;
+        width: 250px;
+    }
+
+    p{
+        font-family: $tipo-letra;
+        font-size: $letra-cuerpo-sm;
+        text-align: center;
+    }
+}
