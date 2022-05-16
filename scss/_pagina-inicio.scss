@@ -30,11 +30,16 @@
     }
 }
 
+/*uso de mixins*/
+@mixin size ($alto, $ancho) {
+    height: $alto;
+    width: $ancho;
+}
+
 .animacion {
     box-sizing: content-box;
     background-color: rgba(255, 255, 255, 0);
-    height: 30px;
-    width: 100%;
+    @include size(30px, 100%);
     padding: 20px 0px;
     display: flex;
     overflow: hidden;
@@ -92,8 +97,7 @@
 }
 
 .destacados-inicio img {
-    height: 150px;
-    width: 100%;
+    @include size(150px, 100%);
 }
 
 .contenedor-trabajo-inicio {
@@ -132,8 +136,7 @@
     background-color: rgb(220, 226, 230);
 
     img {
-        height: 300px;
-        width: 100%;
+        @include size(300px, 100%);
     }
 
     h3 {
@@ -185,8 +188,6 @@
     }
 
     img {
-        height: 150px;
-        width: 100%;
-
+        @include size(150px, 100%);
     }
 }

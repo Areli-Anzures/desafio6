@@ -273,7 +273,7 @@
         width: 100%;
 
         h2 {
-            font-size: 60px;
+            font-size: 100px;
         }
     }
 
@@ -282,16 +282,53 @@
         width: 350px;
     }
 
+    .mision, .vision{
+        p {
+            margin: 70px;
+        }
+    }
+
+    .texto ul {
+        margin: 70px;
+    }
+
     #mision,
-    #vision {
+    #vision, #texto {
         display: flex;
         flex-direction: column;
         align-items: center;
         align-content: center;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    #mision img{
+        transform: translate(-100px, 50px);
+        height: 400px;
+    }
+
+    #vision {
+        img {
+            transform: translate(100px, 50px);
+            height: 350px;
+        }
+
+    }
+    
+    .vision {
+        h2 {
+            text-align: right;
+        }
+    }
+    #texto img {
+        transform: translate(-100px, 50px);
+        height: 300px;
     }
 
     .nosotros-pagina img {
-        height: 550px;
+        height: 650px;
         width: 100%;
     }
 
@@ -316,6 +353,17 @@
         }
     }
 
+    .contacto {
+        background-image: url("../images/fondo-construccion.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 550px;
+        width: 100%;
+    }
+    
+
     #contacto-cons,
     #contacto-des {
         background-size: 400px;
@@ -324,6 +372,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
     }
 
     .contacto-info {
@@ -333,6 +382,7 @@
         justify-content: space-around;
         padding: 20px;
         background-color: aliceblue;
+        width: 100%;
 
         span {
             padding: 0px 10px;
@@ -348,6 +398,13 @@
             padding-top: 10px;
         }
     }
+
+    .botones {
+        display: flex;
+        flex-direction: row;
+        padding-top: 30px;
+    }
+
 }
 
 /*Tablets*/
@@ -402,10 +459,12 @@
 
     .secc-izq {
         grid-area: secc-izq;
+        width: 600px;
     }
 
     .secc-der {
         grid-area: secc-der;
+        width: 600px;
     }
 
     .proy-arq {
@@ -417,7 +476,7 @@
 
         img {
             height: 500px;
-            width: 245px;
+            width: 445px;
             cursor: pointer;
         }
 
@@ -560,6 +619,7 @@
         justify-content: space-around;
         padding: 20px;
         background-color: aliceblue;
+        width: 100%;
 
         span {
             padding: 0px 10px;
@@ -574,4 +634,24 @@
             font-size: $letra-cuerpo-md;
         }
     }
+
+    .contacto {
+        background-image: url("../images/fondo-construccion.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 450px;
+        width: 100%;
+    }
+
+    .contacto div {
+        padding-left: 50px;
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: row;
+    }
+
 }

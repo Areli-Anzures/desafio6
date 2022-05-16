@@ -76,6 +76,7 @@ a {
     color: white;
     background-color: #0000005b; }
 
+/*uso de mixins*/
 .animacion {
   box-sizing: content-box;
   background-color: rgba(255, 255, 255, 0);
@@ -257,7 +258,6 @@ a {
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    transform: translateY(-50%);
     animation: typewriter 5s steps(44) 1s 1 normal both; }
 
 @keyframes typewriter {
@@ -291,36 +291,37 @@ a {
   align-items: center;
   align-content: center; }
 
-#contacto-cons {
-  background-image: url(../images/fondo2.jpg);
-  background-size: 200px; }
-  #contacto-cons img {
-    height: 300px;
-    width: 300px; }
+#contacto-cons img {
+  height: 300px;
+  width: 300px; }
 
 #contacto-des {
   display: flex;
   flex-direction: column;
-  background-image: url(../images/fondo2.jpg);
   background-size: 200px; }
   #contacto-des p {
     text-align: left;
     font-family: font-family "Lucida Sans";
-    font-size: 20px;
-    background-color: #ffffffde;
-    animation: 1.6s entrar 1; }
-  #contacto-des h2 {
-    background-color: #ffffffde;
-    animation: 1.6s entrar 1; }
+    font-size: 20px; }
 
-#contacto-info {
+.contacto {
+  background-image: url("../images/fondo-construccion.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 550px;
+  width: 100%; }
+
+.contacto-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  background-color: aliceblue; }
-  #contacto-info p {
+  background-color: aliceblue;
+  width: 100%; }
+  .contacto-info p {
     height: 30px;
     font-size: 20px; }
 
@@ -343,6 +344,31 @@ a {
   align-items: center;
   box-shadow: 0px 15px 25px;
   border-radius: 10px; }
+
+.botones {
+  display: flex;
+  flex-direction: column; }
+
+.bt {
+  border-color: black;
+  font-size: 20px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%; }
+
+/*Se hace uso de un mapa*/
+.boton-1 {
+  background-color: black; }
+
+.boton-2 {
+  background-color: black; }
+
+.boton-3 {
+  background-color: black; }
+
+.card {
+  font-size: 20px;
+  font-family: font-family "Lucida Sans"; }
 
 /*Estilos página nosotros*/
 .main-nosotros {
@@ -395,29 +421,39 @@ a {
     -webkit-clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
     clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%); } }
 
-#logo {
+#logo, #mision,
+#vision, #texto {
   display: flex;
   align-items: center;
   justify-content: center; }
-  #logo img {
+  #logo img, #mision img, #vision img, #texto img {
     height: 250px;
     width: 250px; }
 
-#mision,
-#vision {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center; }
-  #mision p,
-  #vision p {
-    text-align: justify;
+#mision img,
+#vision img, #texto img {
+  height: 350px;
+  width: 100%; }
+
+.mision, .vision, .texto {
+  background-image: url("../images/fondo-nosotros.jpg"); }
+  .mision p, .vision p, .texto p {
+    text-align: left;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px; }
+    font-size: 20px;
+    color: white; }
+  .mision h2, .vision h2, .texto h2 {
+    color: white; }
+
+.texto ul li {
+  text-align: left;
+  font-family: font-family "Lucida Sans";
+  font-size: 20px;
+  color: white; }
 
 #mensaje p {
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: font-family "Lucida Sans";
   font-size: 20px; }
 
 .nosotros-pagina img {
@@ -620,18 +656,36 @@ footer ul li {
     height: 490px;
     width: 100%; }
     .nosotros-mensaje h2 {
-      font-size: 60px; }
-  #logo img {
+      font-size: 100px; }
+  #logo img, #mision img, #vision img, #texto img {
     height: 250px;
     width: 350px; }
+  .mision p, .vision p {
+    margin: 70px; }
+  .texto ul {
+    margin: 70px; }
   #mision,
-  #vision {
+  #vision, #texto {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center; }
+    #mision img,
+    #vision img, #texto img {
+      width: 100%; }
+  #mision img {
+    transform: translate(-100px, 50px);
+    height: 400px; }
+  #vision img {
+    transform: translate(100px, 50px);
+    height: 350px; }
+  .vision h2 {
+    text-align: right; }
+  #texto img {
+    transform: translate(-100px, 50px);
+    height: 300px; }
   .nosotros-pagina img {
-    height: 550px;
+    height: 650px;
     width: 100%; }
   /*Estilos para página de contacto*/
   .main-contacto {
@@ -645,6 +699,14 @@ footer ul li {
   #contacto-cons img:hover {
     overflow: hidden;
     transform: translate3d(50px, 15px, 50px); }
+  .contacto {
+    background-image: url("../images/fondo-construccion.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 550px;
+    width: 100%; }
   #contacto-cons,
   #contacto-des {
     background-size: 400px;
@@ -658,7 +720,8 @@ footer ul li {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    background-color: aliceblue; }
+    background-color: aliceblue;
+    width: 100%; }
     .contacto-info span {
       padding: 0px 10px; }
     .contacto-info i {
@@ -666,7 +729,11 @@ footer ul li {
     .contacto-info p {
       height: 50px;
       font-size: 25px;
-      padding-top: 10px; } }
+      padding-top: 10px; }
+  .botones {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px; } }
 
 /*Tablets*/
 @media screen and (min-width: 768px) {
@@ -696,9 +763,11 @@ footer ul li {
   .trabajo-inicio {
     grid-area: trabajo-inicio; }
   .secc-izq {
-    grid-area: secc-izq; }
+    grid-area: secc-izq;
+    width: 600px; }
   .secc-der {
-    grid-area: secc-der; }
+    grid-area: secc-der;
+    width: 600px; }
   .proy-arq {
     display: flex;
     flex-direction: column;
@@ -707,7 +776,7 @@ footer ul li {
     overflow: hidden; }
     .proy-arq img {
       height: 500px;
-      width: 245px;
+      width: 445px;
       cursor: pointer; }
     .proy-arq h3 {
       text-transform: uppercase;
@@ -796,11 +865,25 @@ footer ul li {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    background-color: aliceblue; }
+    background-color: aliceblue;
+    width: 100%; }
     .contacto-info span {
       padding: 0px 10px; }
     .contacto-info i {
       padding: 0px 10px; }
     .contacto-info p {
       height: 50px;
-      font-size: 25px; } }
+      font-size: 25px; }
+  .contacto {
+    background-image: url("../images/fondo-construccion.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 450px;
+    width: 100%; }
+  .contacto div {
+    padding-left: 50px; }
+  .botones {
+    display: flex;
+    flex-direction: row; } }
