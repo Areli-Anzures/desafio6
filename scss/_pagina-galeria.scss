@@ -2,57 +2,152 @@
 .main-galeria {
     padding: 160px 0px 0px 0px;
     width: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.imagen h2,
+.imagen p {
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+.titulo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        display: inline-block;
+        position: relative;
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+        font-weight: 400;
+    }
+
+    h2::after,
+    h2::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em;
+    }
+
+    h2::before {
+        left: -40px;
+    }
+
+    h2::after {
+        right: -40px;
+    }
+
+}
+
+.galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+@mixin size ($alto, $ancho) {
+    height: $alto;
+    width: $ancho;
+}
+
+#imagen-1 {
+    margin: 3px;
+    background-image: url("../images/edificio1.jpg");
+    background-size: cover;
+    @include size(200px, 100%);
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    width: 100%;
-
-    /*animaciones*/
-    .titulo {
-        position: top;
-        top: 50%;
-        width: 24em;
-        margin: 0 auto;
-        font-size: 23px;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        animation: typewriter 5s steps(44) 1s 1 normal both;
-    }
+    align-content: center;
+    text-align: center;
 }
 
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 12em;
-    }
+#imagen-2 {
+    @extend #imagen-1;
+    background-image: url("../images/tanque3.jpg");
+    @include size(300px, 100%);
 }
 
-.contenedor-galeria {
-    width: 100%;
-    
-    .titulo{
-        padding: 70px 10px 0px 0px;
-    }
-
-    .descrip {
-        text-align: justify;
-    }
+#imagen-3 {
+    @extend #imagen-1;
+    background-image: url("../images/construccion3.jpg");
+    @include size(300px, 100%);
 }
 
-.mod-edificio, .proy-rev, .proy-ref, .rev-edif{
-    border-style: dashed;
-    border-color: rgb(80, 83, 255);
-    margin-bottom: 10px;
-
-    p{
-        font-family: $tipo-letra;
-        font-size: $letra-cuerpo-sm;
-    }
+#imagen-4 {
+    @extend #imagen-1;
+    background-image: url("../images/construccion1.jpg");
+    @include size(300px, 100%);
 }
 
+#imagen-5 {
+    @extend #imagen-1;
+    background-image: url("../images/construccion2.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-6 {
+    @extend #imagen-1;
+    background-image: url("../images/construccion4.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-7 {
+    @extend #imagen-1;
+    background-image: url("../images/edificio3.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-8 {
+    @extend #imagen-1;
+    grid-area: imagen-8;
+    background-image: url("../images/edificio2.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-9 {
+    @extend #imagen-1;
+    background-image: url("../images/rev-edificios.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-10 {
+    @extend #imagen-1;
+    background-image: url("../images/rev-edificios1.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-11 {
+    @extend #imagen-1;
+    background-image: url("../images/tanque.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-12 {
+    @extend #imagen-1;
+    background-image: url("../images/tanque2.jpg");
+    @include size(300px, 100%);
+}
+
+#imagen-13 {
+    @extend #imagen-1;
+    background-image: url("../images/estructura-3-niveles1.png");
+    @include size(300px, 100%);
+}
+
+#imagen-14 {
+    @extend #imagen-1;
+    background-image: url("../images/estructura-3-niveles2.png");
+    @include size(300px, 100%);
+}

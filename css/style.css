@@ -1,5 +1,7 @@
 @charset "UTF-8";
 /*Se agregan estilos para header y navbar*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script");
 * {
   margin: 0;
   padding: 0;
@@ -59,64 +61,95 @@ a {
 
 /*se agrega imagen de fondo*/
 .mensaje-inicio {
-  background-image: url(../images/principal.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: black;
   height: 350px;
-  width: 100%;
+  max-width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   align-content: center; }
-  .mensaje-inicio p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    text-align: center;
+  .mensaje-inicio h2 {
+    font-family: 'Josefin Sans', sans-serif;
     color: white;
-    background-color: #0000005b; }
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    padding-top: 25px; }
+    .mensaje-inicio h2::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: -6vmin;
+      left: 5vmin;
+      width: 40vmin;
+      height: 40vmin;
+      border-radius: 50%;
+      border: 0.8vmin solid white;
+      box-sizing: border-box; }
 
 /*uso de mixins*/
-.animacion {
-  box-sizing: content-box;
-  background-color: rgba(255, 255, 255, 0);
-  height: 30px;
+:root {
+  --bg-color: black; }
+
+.mensaje-mov {
+  font-size: 3em;
+  color: white;
   width: 100%;
-  padding: 20px 0px;
-  display: flex;
-  overflow: hidden; }
+  height: 200px; }
+  .mensaje-mov span {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    line-height: 1.2;
+    text-align: center; }
+    .mensaje-mov span::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      animation: a-ltr-after 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+      transform: translateX(-101%); }
+    .mensaje-mov span::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-color);
+      animation: a-ltr-before 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+      transform: translateX(0); }
+    .mensaje-mov span:nth-of-type(1)::before {
+      animation-delay: 1s; }
+    .mensaje-mov span:nth-of-type(1)::after {
+      animation-delay: 1s; }
+    .mensaje-mov span:nth-of-type(2)::before {
+      animation-delay: 1.5s; }
+    .mensaje-mov span:nth-of-type(2)::after {
+      animation-delay: 1.5s; }
+    .mensaje-mov span:nth-of-type(3)::before {
+      animation-delay: 2s; }
+    .mensaje-mov span:nth-of-type(3)::after {
+      animation-delay: 2s; }
 
-.palabras {
-  overflow: hidden; }
-  .palabras span {
-    display: block;
-    height: 100%;
-    width: 300px;
-    padding-left: 5px;
-    animation: cambia_palabras 6s infinite;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    text-align: left;
-    color: white;
-    background-color: #0000005b; }
-
-@keyframes cambia_palabras {
-  10% {
-    transform: translateY(-112%); }
-  25% {
-    transform: translateY(-100%); }
-  35% {
-    transform: translateY(-212%); }
-  50% {
-    transform: translateY(-200%); }
-  60% {
-    transform: translateY(-312%); }
-  75% {
-    transform: translateY(-300%); }
-  85% {
-    transform: translateY(-412%); }
+@keyframes a-ltr-after {
+  0% {
+    transform: translateX(-100%); }
   100% {
-    transform: translateY(-400%); } }
+    transform: translateX(101%); } }
+
+@keyframes a-ltr-before {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(200%); } }
 
 .destacados-inicio img {
   height: 150px;
@@ -136,6 +169,23 @@ a {
     align-content: center;
     justify-content: center;
     width: 100%; }
+    .contenedor-trabajo-inicio .trabajo-inicio h2 {
+      display: inline-block;
+      position: relative;
+      font-family: 'Dancing Script', cursive;
+      font-size: 25px;
+      font-weight: 400; }
+      .contenedor-trabajo-inicio .trabajo-inicio h2::after, .contenedor-trabajo-inicio .trabajo-inicio h2::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em; }
+      .contenedor-trabajo-inicio .trabajo-inicio h2::before {
+        left: -40px; }
+      .contenedor-trabajo-inicio .trabajo-inicio h2::after {
+        right: -40px; }
   .contenedor-trabajo-inicio p {
     font-family: font-family "Lucida Sans";
     font-size: letra-cuerpo-sm;
@@ -146,7 +196,6 @@ a {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  border-radius: 15px;
   background-color: #dce2e6; }
   .proy-arq img {
     height: 300px;
@@ -165,7 +214,6 @@ a {
   align-items: flex-end;
   justify-content: flex-end;
   overflow: hidden;
-  border-radius: 15px;
   background-color: #dce2e6; }
   .proy-cons img,
   .proy-est img,
@@ -177,7 +225,7 @@ a {
   .proy-mant h3 {
     text-transform: uppercase;
     z-index: 1;
-    position: relative;
+    text-align: center;
     color: black; }
 
 /*imagenes de proyectos destacados*/
@@ -187,6 +235,23 @@ a {
   align-items: center;
   align-content: center;
   justify-content: center; }
+  .destacados-inicio h2 {
+    display: inline-block;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400; }
+  .destacados-inicio h2::after,
+  .destacados-inicio h2::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em; }
+  .destacados-inicio h2::before {
+    left: -40px; }
+  .destacados-inicio h2::after {
+    right: -40px; }
   .destacados-inicio p {
     font-family: font-family "Lucida Sans";
     font-size: 20px;
@@ -196,18 +261,43 @@ a {
     width: 100%; }
 
 /* Pagina nuestro trabajo*/
-.main-nuestro-trabajo .container-fluid {
-  margin: 130px 0px 0px 0px !important; }
-  .main-nuestro-trabajo .container-fluid h2 {
-    text-align: center; }
-  .main-nuestro-trabajo .container-fluid h3 {
-    color: #21149c;
-    text-align: center; }
-  .main-nuestro-trabajo .container-fluid img {
-    cursor: pointer;
-    transition: all 500ms ease-out; }
-  .main-nuestro-trabajo .container-fluid img:hover {
-    transform: scale(1.5); }
+.main-nuestro-trabajo {
+  width: 100%; }
+  .main-nuestro-trabajo .mensaje {
+    margin: 155px 0px 0px 0px !important;
+    display: flex;
+    justify-content: center; }
+    .main-nuestro-trabajo .mensaje h2 {
+      display: inline-block;
+      position: relative;
+      font-family: 'Dancing Script', cursive;
+      font-size: 25px;
+      font-weight: 400; }
+    .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background-color: currentColor;
+      top: 0.6em; }
+    .main-nuestro-trabajo .mensaje h2::before {
+      left: -40px; }
+    .main-nuestro-trabajo .mensaje h2::after {
+      right: -40px; }
+
+.main-nuestro-trabajo .container-fluid h2 {
+  text-align: center; }
+
+.main-nuestro-trabajo .container-fluid h3 {
+  color: #21149c;
+  text-align: center; }
+
+.main-nuestro-trabajo .container-fluid img {
+  cursor: pointer;
+  transition: all 500ms ease-out; }
+
+.main-nuestro-trabajo .container-fluid img:hover {
+  transform: scale(1.5); }
 
 /*centrar elementos de cada caja*/
 #proy-estruc,
@@ -239,6 +329,39 @@ a {
     font-size: 20px;
     text-align: center; }
 
+/*para los testimonios*/
+.trabajo-testimonios, .testimonio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%; }
+  .trabajo-testimonios hr, .testimonio hr {
+    border: 2px solid black;
+    width: 100px; }
+  .trabajo-testimonios p, .testimonio p {
+    text-align: center; }
+
+.testimonio {
+  padding-top: 50px; }
+
+.puntuacion img {
+  height: 50px;
+  width: 170px; }
+
+.puntuacion p {
+  color: #727272; }
+
+.opinion {
+  width: 100%; }
+  .opinion p {
+    font-size: 20px; }
+
+.usuario p {
+  font-size: 20px;
+  color: #88b06a; }
+
 /*Estilos de Galería*/
 .main-galeria {
   padding: 160px 0px 0px 0px;
@@ -246,40 +369,120 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  align-content: center; }
+
+.imagen h2,
+.imagen p {
+  background-color: rgba(255, 255, 255, 0.521); }
+
+.titulo {
   width: 100%;
-  /*animaciones*/ }
-  .main-galeria .titulo {
-    position: top;
-    top: 50%;
-    width: 24em;
-    margin: 0 auto;
-    font-size: 23px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typewriter 5s steps(44) 1s 1 normal both; }
+  display: flex;
+  justify-content: center; }
+  .titulo h2 {
+    display: inline-block;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    font-weight: 400; }
+  .titulo h2::after,
+  .titulo h2::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em; }
+  .titulo h2::before {
+    left: -40px; }
+  .titulo h2::after {
+    right: -40px; }
 
-@keyframes typewriter {
-  from {
-    width: 0; }
-  to {
-    width: 12em; } }
+.galeria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center; }
 
-.contenedor-galeria {
+#imagen-1, #imagen-2, #imagen-3, #imagen-4, #imagen-5, #imagen-6, #imagen-7, #imagen-8, #imagen-9, #imagen-10, #imagen-11, #imagen-12, #imagen-13, #imagen-14 {
+  margin: 3px;
+  background-image: url("../images/edificio1.jpg");
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center; }
+
+#imagen-2 {
+  background-image: url("../images/tanque3.jpg");
+  height: 300px;
   width: 100%; }
-  .contenedor-galeria .titulo {
-    padding: 70px 10px 0px 0px; }
-  .contenedor-galeria .descrip {
-    text-align: justify; }
 
-.mod-edificio, .proy-rev, .proy-ref, .rev-edif {
-  border-style: dashed;
-  border-color: #5053ff;
-  margin-bottom: 10px; }
-  .mod-edificio p, .proy-rev p, .proy-ref p, .rev-edif p {
-    font-family: font-family "Lucida Sans";
-    font-size: 20px; }
+#imagen-3 {
+  background-image: url("../images/construccion3.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-4 {
+  background-image: url("../images/construccion1.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-5 {
+  background-image: url("../images/construccion2.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-6 {
+  background-image: url("../images/construccion4.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-7 {
+  background-image: url("../images/edificio3.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-8 {
+  grid-area: imagen-8;
+  background-image: url("../images/edificio2.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-9 {
+  background-image: url("../images/rev-edificios.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-10 {
+  background-image: url("../images/rev-edificios1.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-11 {
+  background-image: url("../images/tanque.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-12 {
+  background-image: url("../images/tanque2.jpg");
+  height: 300px;
+  width: 100%; }
+
+#imagen-13 {
+  background-image: url("../images/estructura-3-niveles1.png");
+  height: 300px;
+  width: 100%; }
+
+#imagen-14 {
+  background-image: url("../images/estructura-3-niveles2.png");
+  height: 300px;
+  width: 100%; }
 
 /*Estilos para página de contacto*/
 .main-contacto {
@@ -325,50 +528,29 @@ a {
     height: 30px;
     font-size: 20px; }
 
-/*se agrega animaciones*/
-@keyframes entrar {
-  from {
-    margin-right: 100%;
-    width: 300%; }
-  to {
-    margin-right: 0%;
-    width: 100%; } }
-
 .formulario {
-  background-color: #e9e7e7;
+  background-image: url(../images/fondo-nosotros.jpg);
   margin: 10px;
   padding: 40px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 0px 15px 25px;
-  border-radius: 10px; }
+  align-items: center; }
+  .formulario label {
+    color: white; }
 
-.botones {
-  display: flex;
-  flex-direction: column; }
+.cartas {
+  padding-top: 30px; }
+  .cartas .card {
+    margin: 25px; }
+  .cartas #carta-1 {
+    background-image: url(../images/fondo-nosotros.jpg); }
+    .cartas #carta-1 p {
+      text-align: center;
+      font-size: 20px; }
 
-.bt {
-  border-color: black;
-  font-size: 20px;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%; }
-
-/*Se hace uso de un mapa*/
-.boton-1 {
-  background-color: black; }
-
-.boton-2 {
-  background-color: black; }
-
-.boton-3 {
-  background-color: black; }
-
-.card {
-  font-size: 20px;
-  font-family: font-family "Lucida Sans"; }
+.linea-div {
+  width: 50%; }
 
 /*Estilos página nosotros*/
 .main-nosotros {
@@ -495,31 +677,34 @@ footer ul li {
       font-size: 25px; }
   .mensaje-inicio {
     height: 490px; }
-    .mensaje-inicio p {
-      text-align: center;
-      color: white;
-      background-color: #0000005b;
-      width: 350px;
-      height: 60px;
-      font-size: 25px; }
-  .palabras {
-    height: 60px; }
-    .palabras span {
-      display: block;
-      height: 100%;
-      width: 400px;
-      padding-left: 3px !important;
-      animation: cambia_palabras 6s infinite;
-      font-size: 25px;
-      text-align: center;
-      color: white;
-      background-color: #0000005b; }
+    .mensaje-inicio h2::before {
+      top: -6vmin;
+      left: 4vmin;
+      width: 32vmin;
+      height: 32vmin; }
   /*se acomodan las imagenes*/
   .contenedor-trabajo-inicio {
     display: grid;
     grid-template-areas: "trabajo-inicio trabajo-inicio" "secc-izq secc-der"; }
   .trabajo-inicio {
     grid-area: trabajo-inicio; }
+    .trabajo-inicio h2 {
+      display: inline-block;
+      position: relative;
+      font-family: 'Dancing Script', cursive;
+      font-size: 60px;
+      font-weight: 600; }
+    .trabajo-inicio h2::after, .trabajo-inicio h2::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 3px;
+      background-color: currentColor;
+      top: 0.6em; }
+    .trabajo-inicio h2::before {
+      left: -140px; }
+    .trabajo-inicio h2::after {
+      right: -140px; }
   .secc-izq {
     grid-area: secc-izq; }
   .secc-der {
@@ -594,7 +779,48 @@ footer ul li {
       color: black; }
   .destacados-inicio img {
     height: 350px; }
+  .destacados-inicio h2 {
+    display: inline-block;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    font-weight: 600; }
+  .destacados-inicio h2::after,
+  .destacados-inicio h2::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em; }
+  .destacados-inicio h2::before {
+    left: -140px; }
+  .destacados-inicio h2::after {
+    right: -140px; }
   /*Estilos de la página Nuestro Trabajo*/
+  .main-nuestro-trabajo {
+    width: 100%; }
+    .main-nuestro-trabajo .mensaje {
+      margin: 145px 0px 0px 0px !important;
+      display: flex;
+      justify-content: center; }
+      .main-nuestro-trabajo .mensaje h2 {
+        display: inline-block;
+        position: relative;
+        font-family: 'Dancing Script', cursive;
+        font-size: 60px;
+        font-weight: 600; }
+      .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em; }
+      .main-nuestro-trabajo .mensaje h2::before {
+        left: -140px; }
+      .main-nuestro-trabajo .mensaje h2::after {
+        right: -140px; }
   .main-nuestro-trabajo .container {
     margin: 0px !important;
     width: 100%; }
@@ -614,35 +840,116 @@ footer ul li {
     .imagen img {
       cursor: pointer;
       transition: all 500ms ease-out; }
+  /*Testimonios*/
+  .testimonios {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+  .testimonio {
+    padding: 20px 50px;
+    justify-content: flex-start; }
+    .testimonio p {
+      text-align: left; }
+  .puntuacion {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; }
   /*Estilos de Galería*/
   .main-galeria h2 {
     font-size: 30px; }
   .main-galeria p {
     font-size: 25px; }
-  /*En galería hacer imagenes tipo presentacion*/
-  #carouselExampleSlidesOnly {
-    margin: 5px 0px;
-    height: 650px;
-    width: 650px; }
-  /*tamño de las imagenes */
-  #c1 img,
-  #c2 img,
-  #c3 img,
-  #c4 img,
-  #ed1 img,
-  #ed2 img,
-  #ed3 img {
-    height: 450px;
-    width: 650px; }
-  #t1 img,
-  #t2 img,
-  #t3 img {
-    height: 450px;
-    width: 550px; }
-  #e3 img,
-  #e4 img {
-    height: 450px;
-    width: 450px; }
+  .titulo h2 {
+    display: inline-block;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    font-weight: 600; }
+  .titulo h2::after,
+  .titulo h2::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em; }
+  .titulo h2::before {
+    left: -140px; }
+  .titulo h2::after {
+    right: -140px; }
+  .galeria {
+    display: grid;
+    grid-template-areas: "imagen-1 imagen-1 imagen-2 imagen-3" "imagen-4 imagen-5 imagen-2 imagen-6" "imagen-7 imagen-8 imagen-8 imagen-9" "imagen-7 imagen-10 imagen-11 imagen-12" "imagen-13 imagen-13 imagen-14 imagen-14"; }
+  #imagen-1, #imagen-2, #imagen-3, #imagen-4, #imagen-5, #imagen-6, #imagen-7, #imagen-8, #imagen-9, #imagen-10, #imagen-11, #imagen-12, #imagen-13, #imagen-14 {
+    grid-area: imagen-1;
+    height: 300px;
+    width: 640px; }
+  #imagen-2 {
+    grid-area: imagen-2;
+    height: 600px;
+    width: 345px; }
+  #imagen-3 {
+    grid-area: imagen-3;
+    height: 300px;
+    width: 320px; }
+  #imagen-4 {
+    grid-area: imagen-4;
+    height: 300px;
+    width: 320px; }
+  #imagen-5 {
+    grid-area: imagen-5;
+    height: 300px;
+    width: 320px; }
+  #imagen-6 {
+    grid-area: imagen-6;
+    height: 300px;
+    width: 320px; }
+  #imagen-7 {
+    grid-area: imagen-7;
+    height: 600px;
+    width: 345px; }
+  #imagen-8 {
+    grid-area: imagen-8;
+    height: 300px;
+    width: 640px; }
+  #imagen-9 {
+    grid-area: imagen-9;
+    height: 300px;
+    width: 320px; }
+  #imagen-10 {
+    grid-area: imagen-10;
+    height: 300px;
+    width: 320px; }
+  #imagen-11 {
+    grid-area: imagen-11;
+    height: 300px;
+    width: 320px; }
+  #imagen-12 {
+    grid-area: imagen-12;
+    height: 300px;
+    width: 320px; }
+  #imagen-13 {
+    grid-area: imagen-13;
+    height: 300px;
+    width: 640px; }
+  #imagen-14 {
+    grid-area: imagen-14;
+    height: 300px;
+    width: 640px; }
+  /*se agrega el efecto hover*/
+  .imagen h2,
+  .imagen p {
+    background-color: rgba(255, 255, 255, 0.521);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    cursor: pointer;
+    visibility: hidden; }
+  .imagen:hover > h2 {
+    opacity: 1;
+    visibility: visible; }
+  .imagen:hover > p {
+    opacity: 1;
+    visibility: visible; }
   /*Estilos página nosotros*/
   .main-nosotros {
     width: 100%;
@@ -660,12 +967,14 @@ footer ul li {
   #logo img, #mision img, #vision img, #texto img {
     height: 250px;
     width: 350px; }
-  .mision p, .vision p {
+  .mision p,
+  .vision p {
     margin: 70px; }
   .texto ul {
     margin: 70px; }
   #mision,
-  #vision, #texto {
+  #vision,
+  #texto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -730,10 +1039,8 @@ footer ul li {
       height: 50px;
       font-size: 25px;
       padding-top: 10px; }
-  .botones {
-    display: flex;
-    flex-direction: row;
-    padding-top: 30px; } }
+  .card {
+    margin: 25px; } }
 
 /*Tablets*/
 @media screen and (min-width: 768px) {
@@ -744,31 +1051,52 @@ footer ul li {
     position: fixed;
     top: 90px;
     width: 100%; }
-  /*Estilos del main: Página de inicio*/
-  .palabras span {
-    display: block;
-    height: 50px;
-    width: 500px;
-    padding-left: 5px;
-    font-size: 30px; }
-  .main-inicio p {
-    font-size: 25px; }
-  .animacion p {
-    font-size: 30px;
-    height: 80px; }
+  .main-inicio {
+    padding-top: 145px; }
+    .main-inicio p {
+      font-size: 25px; }
+  .mensaje-inicio {
+    width: 100%; }
+    .mensaje-inicio h2::before {
+      top: -6vmin;
+      left: 4vmin;
+      width: 32vmin;
+      height: 32vmin; }
   /*se acomodan las imagenes*/
   .contenedor-trabajo-inicio {
+    width: 100%;
     display: grid;
     grid-template-areas: "trabajo-inicio trabajo-inicio" "secc-izq secc-der"; }
   .trabajo-inicio {
+    width: 100%;
     grid-area: trabajo-inicio; }
+    .trabajo-inicio h2 {
+      display: inline-block;
+      position: relative;
+      font-family: 'Dancing Script', cursive;
+      font-size: 60px;
+      font-weight: 600; }
+    .trabajo-inicio h2::after, .trabajo-inicio h2::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 3px;
+      background-color: currentColor;
+      top: 0.6em; }
+    .trabajo-inicio h2::before {
+      left: -140px; }
+    .trabajo-inicio h2::after {
+      right: -140px; }
+    .trabajo-inicio p {
+      width: 100%; }
   .secc-izq {
     grid-area: secc-izq;
-    width: 600px; }
+    width: 350px; }
   .secc-der {
     grid-area: secc-der;
-    width: 600px; }
+    width: 400px; }
   .proy-arq {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -785,8 +1113,8 @@ footer ul li {
   .proy-cons {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: flex-start;
+    justify-content: flex-start;
     overflow: hidden; }
     .proy-cons img {
       height: 250px;
@@ -794,8 +1122,8 @@ footer ul li {
       cursor: pointer; }
     .proy-cons h3 {
       text-transform: uppercase;
-      position: relative;
-      color: black; }
+      color: black;
+      text-align: center; }
   .proy-est {
     display: flex;
     flex-direction: column;
@@ -833,15 +1161,102 @@ footer ul li {
   .destacados-inicio img {
     height: 300px;
     width: 100%; }
+  .destacados-inicio h2 {
+    display: inline-block;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    font-weight: 600; }
+  .destacados-inicio h2::after,
+  .destacados-inicio h2::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em; }
+  .destacados-inicio h2::before {
+    left: -140px; }
+  .destacados-inicio h2::after {
+    right: -140px; }
   /*Animaciones para la galeria*/
-  .titulo {
-    animation: typewriter 5s steps(44) 1s 1 normal both;
-    z-index: -1; }
-  @keyframes typewriter {
-    from {
-      width: 0; }
-    to {
-      width: 18em; } }
+  .galeria {
+    display: grid;
+    grid-template-areas: "imagen-1 imagen-1" "imagen-2 imagen-3" "imagen-2 imagen-4" "imagen-5 imagen-6" "imagen-7 imagen-9" "imagen-7 imagen-10" "imagen-8 imagen-8" "imagen-11 imagen-12" "imagen-13 imagen-13" "imagen-14 imagen-14"; }
+  .titulo h2 {
+    display: inline-block;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    font-weight: 600; }
+  .titulo h2::after,
+  .titulo h2::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em; }
+  .titulo h2::before {
+    left: -140px; }
+  .titulo h2::after {
+    right: -140px; }
+  #imagen-1, #imagen-2, #imagen-3, #imagen-4, #imagen-5, #imagen-6, #imagen-7, #imagen-8, #imagen-9, #imagen-10, #imagen-11, #imagen-12, #imagen-13, #imagen-14 {
+    grid-area: imagen-1;
+    height: 300px;
+    width: 800px; }
+  #imagen-2 {
+    grid-area: imagen-2;
+    height: 600px;
+    width: 400px; }
+  #imagen-3 {
+    grid-area: imagen-3;
+    height: 300px;
+    width: 400px; }
+  #imagen-4 {
+    grid-area: imagen-4;
+    height: 300px;
+    width: 400px; }
+  #imagen-5 {
+    grid-area: imagen-5;
+    height: 300px;
+    width: 400px; }
+  #imagen-6 {
+    grid-area: imagen-6;
+    height: 300px;
+    width: 400px; }
+  #imagen-7 {
+    grid-area: imagen-7;
+    height: 600px;
+    width: 400px; }
+  #imagen-8 {
+    grid-area: imagen-8;
+    height: 300px;
+    width: 800px; }
+  #imagen-9 {
+    grid-area: imagen-9;
+    height: 300px;
+    width: 400px; }
+  #imagen-10 {
+    grid-area: imagen-10;
+    height: 300px;
+    width: 400px; }
+  #imagen-11 {
+    grid-area: imagen-11;
+    height: 300px;
+    width: 400px; }
+  #imagen-12 {
+    grid-area: imagen-12;
+    height: 300px;
+    width: 400px; }
+  #imagen-13 {
+    grid-area: imagen-13;
+    height: 300px;
+    width: 800px; }
+  #imagen-14 {
+    grid-area: imagen-14;
+    height: 300px;
+    width: 800px; }
   /*Estilos de la página Nuestro Trabajo*/
   .main-nuestro-trabajo .container {
     margin: 120px 0px 0px 0px !important; }
@@ -853,6 +1268,44 @@ footer ul li {
   .nosotros-pagina img {
     height: 400px;
     width: 100%; }
+  /* Pagina nuestro trabajo*/
+  .main-nuestro-trabajo {
+    width: 100%; }
+    .main-nuestro-trabajo .mensaje {
+      margin: 155px 0px 0px 0px !important;
+      display: flex;
+      justify-content: center; }
+      .main-nuestro-trabajo .mensaje h2 {
+        display: inline-block;
+        position: relative;
+        font-family: 'Dancing Script', cursive;
+        font-size: 60px;
+        font-weight: 600; }
+      .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em; }
+      .main-nuestro-trabajo .mensaje h2::before {
+        left: -120px; }
+      .main-nuestro-trabajo .mensaje h2::after {
+        right: -120px; }
+  /*Testimonios*/
+  .testimonios {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+  .testimonio {
+    padding: 20px 30px;
+    justify-content: flex-start; }
+    .testimonio p {
+      text-align: left; }
+  .puntuacion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
   /*Estilos para página de contacto*/
   .main-contacto {
     display: flex;
@@ -884,6 +1337,5 @@ footer ul li {
     width: 100%; }
   .contacto div {
     padding-left: 50px; }
-  .botones {
-    display: flex;
-    flex-direction: row; } }
+  .card {
+    margin: 25px; } }

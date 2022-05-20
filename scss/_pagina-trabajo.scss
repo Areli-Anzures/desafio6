@@ -1,6 +1,42 @@
 /* Pagina nuestro trabajo*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script');
+.main-nuestro-trabajo {
+    width: 100%;
+
+    .mensaje {
+        margin: 155px 0px 0px 0px !important;
+        display: flex;
+        justify-content: center;
+
+        h2{
+            display:inline-block;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        h2::after,h2::before{
+            content:'';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
+        }
+
+        h2::before{
+            left: -40px;
+        }
+
+        h2::after{
+            right: -40px;
+        }
+
+    }
+}
+
 .main-nuestro-trabajo .container-fluid {
-    margin: 130px 0px 0px 0px !important;
 
     h2 {
         text-align: center;
@@ -41,9 +77,59 @@
         width: 250px;
     }
 
-    p{
+    p {
         font-family: $tipo-letra;
         font-size: $letra-cuerpo-sm;
         text-align: center;
+    }
+}
+
+/*para los testimonios*/
+.trabajo-testimonios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+
+    hr {
+        border: 2px solid black;
+        width: 100px;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+.testimonio {
+    @extend .trabajo-testimonios;
+    padding-top: 50px;
+}
+
+.puntuacion {
+    img {
+        height: 50px;
+        width: 170px;
+    }
+
+    p {
+        color: rgb(114, 114, 114);
+    }
+}
+
+.opinion {
+    width: 100%;
+
+    p {
+        font-size: $letra-cuerpo-sm;
+    }
+}
+
+.usuario {
+    p {
+        font-size: $letra-cuerpo-sm;
+        color: #88b06a;
     }
 }

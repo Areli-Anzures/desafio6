@@ -1,6 +1,7 @@
 /*media queries*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script');
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px){
 
     header {
         h1 {
@@ -29,29 +30,11 @@
     .mensaje-inicio {
         height: 490px;
 
-        p {
-            text-align: center;
-            color: white;
-            background-color: #0000005b;
-            width: 350px;
-            height: 60px;
-            font-size: $letra-cuerpo-md;
-        }
-    }
-
-    .palabras {
-        height: 60px;
-
-        span {
-            display: block;
-            height: 100%;
-            width: 400px;
-            padding-left: 3px !important;
-            animation: cambia_palabras 6s infinite;
-            font-size: $letra-cuerpo-md;
-            text-align: center;
-            color: white;
-            background-color: #0000005b;
+        h2::before {
+            top: -6vmin;
+            left: 4vmin;
+            width: 32vmin;
+            height: 32vmin;
         }
     }
 
@@ -66,6 +49,31 @@
 
     .trabajo-inicio {
         grid-area: trabajo-inicio;
+
+        h2{
+            display:inline-block;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        h2::after,h2::before{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
+        }
+
+        h2::before{
+            left: -140px;
+        }
+
+        h2::after{
+            right: -140px;
+        }
     }
 
     .secc-izq {
@@ -180,9 +188,69 @@
         img {
             height: 350px;
         }
+
+        h2{
+            display:inline-block;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        h2::after,h2::before{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
+        }
+
+        h2::before{
+            left: -140px;
+        }
+
+        h2::after{
+            right: -140px;
+        }
     }
 
     /*Estilos de la página Nuestro Trabajo*/
+    .main-nuestro-trabajo {
+        width: 100%;
+
+        .mensaje {
+            margin: 145px 0px 0px 0px !important;
+            display: flex;
+            justify-content: center;
+    
+            h2{
+                display:inline-block;
+                position: relative;
+                font-family: 'Dancing Script', cursive;
+                font-size: 60px;
+                font-weight: 600;
+            }
+    
+            h2::after,h2::before{
+                content:'';
+                position: absolute;
+                width: 120px;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
+    
+            h2::before{
+                left: -140px;
+            }
+    
+            h2::after{
+                right: -140px;
+            }
+    
+        }
+    }
     .main-nuestro-trabajo .container {
         margin: 0px !important;
         width: 100%;
@@ -212,6 +280,29 @@
         }
     }
 
+    /*Testimonios*/
+    .testimonios{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+
+    .testimonio {
+        padding: 20px 50px;
+        justify-content: flex-start;
+        
+        p{
+            text-align: left;
+        }
+    }
+
+    .puntuacion {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
     /*Estilos de Galería*/
     .main-galeria {
 
@@ -225,36 +316,137 @@
     }
 
 
-    /*En galería hacer imagenes tipo presentacion*/
-    #carouselExampleSlidesOnly {
-        margin: 5px 0px;
-        height: 650px;
-        width: 650px;
+    .titulo {
+        h2{
+            display:inline-block;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        h2::after,h2::before{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
+        }
+
+        h2::before{
+            left: -140px;
+        }
+
+        h2::after{
+            right: -140px;
+        }
     }
 
-    /*tamño de las imagenes */
-    #c1 img,
-    #c2 img,
-    #c3 img,
-    #c4 img,
-    #ed1 img,
-    #ed2 img,
-    #ed3 img {
-        height: 450px;
-        width: 650px;
+    .galeria {
+        display: grid;
+        grid-template-areas:
+            "imagen-1 imagen-1 imagen-2 imagen-3"
+            "imagen-4 imagen-5 imagen-2 imagen-6"
+            "imagen-7 imagen-8 imagen-8 imagen-9"
+            "imagen-7 imagen-10 imagen-11 imagen-12"
+            "imagen-13 imagen-13 imagen-14 imagen-14"
+        ;
     }
 
-    #t1 img,
-    #t2 img,
-    #t3 img {
-        height: 450px;
-        width: 550px;
+    @mixin size ($alto, $ancho) {
+        height: $alto;
+        width: $ancho;
     }
 
-    #e3 img,
-    #e4 img {
-        height: 450px;
-        width: 450px;
+    #imagen-1 {
+        grid-area: imagen-1;
+        @include size(300px, 640px);
+    }
+
+    #imagen-2 {
+        grid-area: imagen-2;
+        @include size(600px, 345px);
+    }
+
+    #imagen-3 {
+        grid-area: imagen-3;
+        @include size(300px, 320px);
+    }
+
+    #imagen-4 {
+        grid-area: imagen-4;
+        @include size(300px, 320px);
+    }
+
+    #imagen-5 {
+        grid-area: imagen-5;
+        @include size(300px, 320px);
+    }
+
+    #imagen-6 {
+        grid-area: imagen-6;
+        @include size(300px, 320px);
+    }
+
+    #imagen-7 {
+        grid-area: imagen-7;
+        @include size(600px, 345px);
+    }
+
+    #imagen-8 {
+        grid-area: imagen-8;
+        @include size(300px, 640px);
+    }
+
+    #imagen-9 {
+        grid-area: imagen-9;
+        @include size(300px, 320px);
+    }
+
+    #imagen-10 {
+        grid-area: imagen-10;
+        @include size(300px, 320px);
+    }
+
+    #imagen-11 {
+        grid-area: imagen-11;
+        @include size(300px, 320px);
+    }
+
+    #imagen-12 {
+        grid-area: imagen-12;
+        @include size(300px, 320px);
+    }
+
+    #imagen-13 {
+        grid-area: imagen-13;
+        @include size(300px, 640px);
+    }
+
+    #imagen-14 {
+        grid-area: imagen-14;
+        @include size(300px, 640px);
+    }
+
+    /*se agrega el efecto hover*/
+    .imagen h2,
+    .imagen p {
+        background-color: rgba(255, 255, 255, 0.521);
+        transition: all 500ms ease-out;
+        opacity: 0;
+        cursor: pointer;
+        visibility: hidden;
+    }
+
+    .imagen:hover>h2 {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .imagen:hover>p {
+        opacity: 1;
+        visibility: visible;
     }
 
     /*Estilos página nosotros*/
@@ -282,7 +474,8 @@
         width: 350px;
     }
 
-    .mision, .vision{
+    .mision,
+    .vision {
         p {
             margin: 70px;
         }
@@ -293,18 +486,19 @@
     }
 
     #mision,
-    #vision, #texto {
+    #vision,
+    #texto {
         display: flex;
         flex-direction: column;
         align-items: center;
         align-content: center;
 
-        img{
+        img {
             width: 100%;
         }
     }
 
-    #mision img{
+    #mision img {
         transform: translate(-100px, 50px);
         height: 400px;
     }
@@ -316,12 +510,13 @@
         }
 
     }
-    
+
     .vision {
         h2 {
             text-align: right;
         }
     }
+
     #texto img {
         transform: translate(-100px, 50px);
         height: 300px;
@@ -362,7 +557,7 @@
         height: 550px;
         width: 100%;
     }
-    
+
 
     #contacto-cons,
     #contacto-des {
@@ -399,16 +594,14 @@
         }
     }
 
-    .botones {
-        display: flex;
-        flex-direction: row;
-        padding-top: 30px;
+    .card {
+        margin: 25px;
     }
 
 }
 
 /*Tablets*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
 
     header {
         h1 {
@@ -424,28 +617,28 @@
         width: 100%;
     }
 
-    /*Estilos del main: Página de inicio*/
-    .palabras span {
-        display: block;
-        height: 50px;
-        width: 500px;
-        padding-left: 5px;
-        font-size: 30px;
-    }
-
     .main-inicio {
+        padding-top: 145px;
+
         p {
             font-size: $letra-cuerpo-md;
         }
     }
 
-    .animacion p {
-        font-size: 30px;
-        height: 80px;
+    .mensaje-inicio {
+        width: 100%;
+
+        h2::before {
+            top: -6vmin;
+            left: 4vmin;
+            width: 32vmin;
+            height: 32vmin;
+        }
     }
 
     /*se acomodan las imagenes*/
     .contenedor-trabajo-inicio {
+        width: 100%;
         display: grid;
         grid-template-areas:
             "trabajo-inicio trabajo-inicio"
@@ -454,20 +647,51 @@
     }
 
     .trabajo-inicio {
+        width: 100%;
         grid-area: trabajo-inicio;
+
+        h2{
+            display:inline-block;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        h2::after,h2::before{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
+        }
+
+        h2::before{
+            left: -140px;
+        }
+
+        h2::after{
+            right: -140px;
+        }
+
+        p{
+            width: 100%;
+        }
     }
 
     .secc-izq {
         grid-area: secc-izq;
-        width: 600px;
+        width: 350px;
     }
 
     .secc-der {
         grid-area: secc-der;
-        width: 600px;
+        width: 400px;
     }
 
     .proy-arq {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -490,8 +714,8 @@
     .proy-cons {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
+        align-items: flex-start;
+        justify-content: flex-start;
         overflow: hidden;
 
         img {
@@ -502,8 +726,8 @@
 
         h3 {
             text-transform: uppercase;
-            position: relative;
             color: black;
+            text-align: center;
         }
     }
 
@@ -562,22 +786,150 @@
             height: 300px;
             width: 100%;
         }
+
+        h2{
+            display:inline-block;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        h2::after,h2::before{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
+        }
+
+        h2::before{
+            left: -140px;
+        }
+
+        h2::after{
+            right: -140px;
+        }
     }
 
     /*Animaciones para la galeria*/
-    .titulo {
-        animation: typewriter 5s steps(44) 1s 1 normal both;
-        z-index: -1;
+    .galeria {
+        display: grid;
+        grid-template-areas:
+            "imagen-1 imagen-1"
+            "imagen-2 imagen-3"
+            "imagen-2 imagen-4"
+            "imagen-5 imagen-6"
+            "imagen-7 imagen-9"
+            "imagen-7 imagen-10"
+            "imagen-8 imagen-8"
+            "imagen-11 imagen-12"
+            "imagen-13 imagen-13"
+            "imagen-14 imagen-14"
+        ;
     }
 
-    @keyframes typewriter {
-        from {
-            width: 0;
+    .titulo {
+        h2{
+            display:inline-block;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            font-size: 60px;
+            font-weight: 600;
         }
 
-        to {
-            width: 18em;
+        h2::after,h2::before{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
         }
+
+        h2::before{
+            left: -140px;
+        }
+
+        h2::after{
+            right: -140px;
+        }
+    }
+
+    @mixin size ($alto, $ancho) {
+        height: $alto;
+        width: $ancho;
+    }
+
+    #imagen-1 {
+        grid-area: imagen-1;
+        @include size(300px, 800px);
+    }
+
+    #imagen-2 {
+        grid-area: imagen-2;
+        @include size(600px, 400px);
+    }
+
+    #imagen-3 {
+        grid-area: imagen-3;
+        @include size(300px, 400px);
+    }
+
+    #imagen-4 {
+        grid-area: imagen-4;
+        @include size(300px, 400px);
+    }
+
+    #imagen-5 {
+        grid-area: imagen-5;
+        @include size(300px, 400px);
+    }
+
+    #imagen-6 {
+        grid-area: imagen-6;
+        @include size(300px, 400px);
+    }
+
+    #imagen-7 {
+        grid-area: imagen-7;
+        @include size(600px, 400px);
+    }
+
+    #imagen-8 {
+        grid-area: imagen-8;
+        @include size(300px, 800px);
+    }
+
+    #imagen-9 {
+        grid-area: imagen-9;
+        @include size(300px, 400px);
+    }
+
+    #imagen-10 {
+        grid-area: imagen-10;
+        @include size(300px, 400px);
+    }
+
+    #imagen-11 {
+        grid-area: imagen-11;
+        @include size(300px, 400px);
+    }
+
+    #imagen-12 {
+        grid-area: imagen-12;
+        @include size(300px, 400px);
+    }
+
+    #imagen-13 {
+        grid-area: imagen-13;
+        @include size(300px, 800px);
+    }
+
+    #imagen-14 {
+        grid-area: imagen-14;
+        @include size(300px, 800px);
     }
 
     /*Estilos de la página Nuestro Trabajo*/
@@ -587,7 +939,6 @@
             margin: 120px 0px 0px 0px !important;
         }
     }
-
 
     /*Estilos página nosotros*/
     .main-nosotros {
@@ -602,6 +953,65 @@
             height: 400px;
             width: 100%;
         }
+    }
+
+    /* Pagina nuestro trabajo*/
+    .main-nuestro-trabajo {
+        width: 100%;
+
+        .mensaje {
+            margin: 155px 0px 0px 0px !important;
+            display: flex;
+            justify-content: center;
+    
+            h2{
+                display:inline-block;
+                position: relative;
+                font-family: 'Dancing Script', cursive;
+                font-size: 60px;
+                font-weight: 600;
+            }
+    
+            h2::after,h2::before{
+                content:'';
+                position: absolute;
+                width: 100px;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
+    
+            h2::before{
+                left: -120px;
+            }
+    
+            h2::after{
+                right: -120px;
+            }
+    
+        }
+    }
+    /*Testimonios*/
+    .testimonios{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+
+    .testimonio {
+        padding: 20px 30px;
+        justify-content: flex-start;
+
+        p{
+            text-align: left;
+        }
+    }
+
+    .puntuacion {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     /*Estilos para página de contacto*/
@@ -649,9 +1059,8 @@
         padding-left: 50px;
     }
 
-    .botones {
-        display: flex;
-        flex-direction: row;
+    .card {
+        margin: 25px;
     }
 
 }
