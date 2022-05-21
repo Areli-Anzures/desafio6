@@ -20,7 +20,7 @@
     /*Estilos del main: Página de inicio*/
     .main-inicio {
         width: 100%;
-        padding-top: 140px;
+        padding-top: 138px;
 
         p {
             font-size: $letra-cuerpo-md;
@@ -31,10 +31,10 @@
         height: 490px;
 
         h2::before {
-            top: -6vmin;
-            left: 4vmin;
-            width: 32vmin;
-            height: 32vmin;
+            top: -1.5vmin;
+            left: 1vmin;
+            width: 20vmin;
+            height: 20vmin;
         }
     }
 
@@ -51,28 +51,28 @@
         grid-area: trabajo-inicio;
 
         h2{
-            display:inline-block;
+            display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
-            font-size: 60px;
-            font-weight: 600;
+            font-size: 60px !important;
+            font-weight: 600 !important;
         }
 
         h2::after,h2::before{
             content:'';
             position: absolute;
-            width: 120px;
+            width: 120px !important;
             height: 3px;
             background-color: currentColor;
             top: 0.6em;
         }
 
         h2::before{
-            left: -140px;
+            left: -140px !important;
         }
 
         h2::after{
-            right: -140px;
+            right: -140px !important;
         }
     }
 
@@ -90,6 +90,7 @@
         align-items: flex-start;
         justify-content: flex-start;
         overflow: hidden;
+        width: 600px;
 
         img {
             height: 600px;
@@ -351,7 +352,7 @@
             "imagen-7 imagen-8 imagen-8 imagen-9"
             "imagen-7 imagen-10 imagen-11 imagen-12"
             "imagen-13 imagen-13 imagen-14 imagen-14"
-        ;
+        !important;
     }
 
     @mixin size ($alto, $ancho) {
@@ -629,10 +630,10 @@
         width: 100%;
 
         h2::before {
-            top: -6vmin;
-            left: 4vmin;
-            width: 32vmin;
-            height: 32vmin;
+            top: -1.5vmin;
+            left: 1 vmin;
+            width: 20vmin;
+            height: 20vmin;
         }
     }
 
@@ -651,7 +652,7 @@
         grid-area: trabajo-inicio;
 
         h2{
-            display:inline-block;
+            display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 60px;
@@ -677,107 +678,6 @@
 
         p{
             width: 100%;
-        }
-    }
-
-    .secc-izq {
-        grid-area: secc-izq;
-        width: 350px;
-    }
-
-    .secc-der {
-        grid-area: secc-der;
-        width: 400px;
-    }
-
-    .proy-arq {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        overflow: hidden;
-
-        img {
-            height: 500px;
-            width: 445px;
-            cursor: pointer;
-        }
-
-        h3 {
-            text-transform: uppercase;
-            position: relative;
-            color: black;
-        }
-    }
-
-    .proy-cons {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        overflow: hidden;
-
-        img {
-            height: 250px;
-            width: 500px;
-            cursor: pointer;
-        }
-
-        h3 {
-            text-transform: uppercase;
-            color: black;
-            text-align: center;
-        }
-    }
-
-    .proy-est {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
-        overflow: hidden;
-
-        img {
-            height: 210px;
-            width: 200px;
-            cursor: pointer;
-        }
-
-        img:hover {
-            overflow: hidden;
-            transform: translate3d(-50px, 0, 0);
-        }
-
-        h3 {
-            text-transform: uppercase;
-            position: relative;
-            color: black;
-        }
-    }
-
-    .proy-mant {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
-        overflow: hidden;
-
-        img {
-            height: 210px;
-            width: 250px;
-            cursor: pointer;
-        }
-
-        img:hover {
-            overflow: hidden;
-            transform: translate3d(-50px, 0, 0);
-        }
-
-        h3 {
-            text-transform: uppercase;
-            position: relative;
-            color: black;
         }
     }
 
