@@ -1,7 +1,6 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script");
 /*Se agregan estilos para header y navbar*/
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script");
 * {
   margin: 0;
   padding: 0;
@@ -63,7 +62,7 @@ a {
 .mensaje-inicio {
   background-color: black;
   height: 350px;
-  max-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,16 +74,16 @@ a {
     font-weight: 500;
     position: relative;
     text-align: center;
-    padding-top: 25px; }
+    padding-top: 32px; }
     .mensaje-inicio h2::before {
       content: "";
       display: block;
       position: absolute;
       z-index: 2;
-      top: -6vmin;
-      left: 5vmin;
-      width: 40vmin;
-      height: 40vmin;
+      top: -5vmin;
+      left: 3.5vmin;
+      width: 35vmin;
+      height: 35vmin;
       border-radius: 50%;
       border: 0.8vmin solid white;
       box-sizing: border-box; }
@@ -240,18 +239,17 @@ a {
     position: relative;
     font-family: 'Dancing Script', cursive;
     font-weight: 400; }
-  .destacados-inicio h2::after,
-  .destacados-inicio h2::before {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: currentColor;
-    top: 0.6em; }
-  .destacados-inicio h2::before {
-    left: -40px; }
-  .destacados-inicio h2::after {
-    right: -40px; }
+    .destacados-inicio h2::after, .destacados-inicio h2::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background-color: currentColor;
+      top: 0.6em; }
+    .destacados-inicio h2::before {
+      left: -40px; }
+    .destacados-inicio h2::after {
+      right: -40px; }
   .destacados-inicio p {
     font-family: font-family "Lucida Sans";
     font-size: 20px;
@@ -273,17 +271,17 @@ a {
       font-family: 'Dancing Script', cursive;
       font-size: 25px;
       font-weight: 400; }
-    .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 3px;
-      background-color: currentColor;
-      top: 0.6em; }
-    .main-nuestro-trabajo .mensaje h2::before {
-      left: -40px; }
-    .main-nuestro-trabajo .mensaje h2::after {
-      right: -40px; }
+      .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em; }
+      .main-nuestro-trabajo .mensaje h2::before {
+        left: -40px; }
+      .main-nuestro-trabajo .mensaje h2::after {
+        right: -40px; }
 
 .main-nuestro-trabajo .container-fluid h2 {
   text-align: center; }
@@ -486,7 +484,7 @@ a {
 
 /*Estilos para página de contacto*/
 .main-contacto {
-  padding: 135px 0px 25px 0px;
+  padding: 160px 0px 10px 0px;
   height: auto;
   width: 100%;
   display: flex;
@@ -508,13 +506,13 @@ a {
     font-size: 20px; }
 
 .contacto {
-  background-image: url("../images/fondo-construccion.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 550px;
-  width: 100%; }
+  height: 560px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center; }
 
 .contacto-info {
   display: flex;
@@ -522,11 +520,14 @@ a {
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  background-color: aliceblue;
+  background-color: red;
   width: 100%; }
   .contacto-info p {
     height: 30px;
     font-size: 20px; }
+
+.contacto-form h2 {
+  text-align: center; }
 
 .formulario {
   background-image: url(../images/fondo-nosotros.jpg);
@@ -662,6 +663,7 @@ footer ul li {
   display: inline-block; }
 
 /*media queries*/
+/*Para laptop*/
 @media screen and (min-width: 1200px) {
   header h1 {
     font-size: 35px; }
@@ -694,17 +696,17 @@ footer ul li {
       font-family: 'Dancing Script', cursive;
       font-size: 60px !important;
       font-weight: 600 !important; }
-    .trabajo-inicio h2::after, .trabajo-inicio h2::before {
-      content: '';
-      position: absolute;
-      width: 120px !important;
-      height: 3px;
-      background-color: currentColor;
-      top: 0.6em; }
-    .trabajo-inicio h2::before {
-      left: -140px !important; }
-    .trabajo-inicio h2::after {
-      right: -140px !important; }
+      .trabajo-inicio h2::after, .trabajo-inicio h2::before {
+        content: '';
+        position: absolute;
+        width: 120px !important;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em; }
+      .trabajo-inicio h2::before {
+        left: -140px !important; }
+      .trabajo-inicio h2::after {
+        right: -140px !important; }
   .secc-izq {
     grid-area: secc-izq; }
   .secc-der {
@@ -786,18 +788,17 @@ footer ul li {
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
     font-weight: 600; }
-  .destacados-inicio h2::after,
-  .destacados-inicio h2::before {
-    content: '';
-    position: absolute;
-    width: 120px;
-    height: 3px;
-    background-color: currentColor;
-    top: 0.6em; }
-  .destacados-inicio h2::before {
-    left: -140px; }
-  .destacados-inicio h2::after {
-    right: -140px; }
+    .destacados-inicio h2::after, .destacados-inicio h2::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 3px;
+      background-color: currentColor;
+      top: 0.6em; }
+    .destacados-inicio h2::before {
+      left: -140px; }
+    .destacados-inicio h2::after {
+      right: -140px; }
   /*Estilos de la página Nuestro Trabajo*/
   .main-nuestro-trabajo {
     width: 100%; }
@@ -811,17 +812,17 @@ footer ul li {
         font-family: 'Dancing Script', cursive;
         font-size: 60px;
         font-weight: 600; }
-      .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
-        content: '';
-        position: absolute;
-        width: 120px;
-        height: 3px;
-        background-color: currentColor;
-        top: 0.6em; }
-      .main-nuestro-trabajo .mensaje h2::before {
-        left: -140px; }
-      .main-nuestro-trabajo .mensaje h2::after {
-        right: -140px; }
+        .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
+          content: '';
+          position: absolute;
+          width: 120px;
+          height: 3px;
+          background-color: currentColor;
+          top: 0.6em; }
+        .main-nuestro-trabajo .mensaje h2::before {
+          left: -140px; }
+        .main-nuestro-trabajo .mensaje h2::after {
+          right: -140px; }
   .main-nuestro-trabajo .container {
     margin: 0px !important;
     width: 100%; }
@@ -866,18 +867,18 @@ footer ul li {
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
     font-weight: 600; }
-  .titulo h2::after,
-  .titulo h2::before {
-    content: '';
-    position: absolute;
-    width: 120px;
-    height: 3px;
-    background-color: currentColor;
-    top: 0.6em; }
-  .titulo h2::before {
-    left: -140px; }
-  .titulo h2::after {
-    right: -140px; }
+    .titulo h2::after,
+    .titulo h2::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 3px;
+      background-color: currentColor;
+      top: 0.6em; }
+    .titulo h2::before {
+      left: -140px; }
+    .titulo h2::after {
+      right: -140px; }
   .galeria {
     display: grid;
     grid-template-areas: "imagen-1 imagen-1 imagen-2 imagen-3" "imagen-4 imagen-5 imagen-2 imagen-6" "imagen-7 imagen-8 imagen-8 imagen-9" "imagen-7 imagen-10 imagen-11 imagen-12" "imagen-13 imagen-13 imagen-14 imagen-14" !important; }
@@ -999,23 +1000,18 @@ footer ul li {
     width: 100%; }
   /*Estilos para página de contacto*/
   .main-contacto {
-    padding: 135px 0px 25px 0px;
+    padding: 120px 0px 25px 0px !important;
     height: auto;
     width: auto; }
   #contacto-cons img {
     height: 500px;
     width: 450px;
     cursor: pointer; }
-  #contacto-cons img:hover {
-    overflow: hidden;
-    transform: translate3d(50px, 15px, 50px); }
+    #contacto-cons img:hover {
+      overflow: hidden;
+      transform: translate3d(50px, 15px, 50px); }
   .contacto {
-    background-image: url("../images/fondo-construccion.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 550px;
+    height: 570px !important;
     width: 100%; }
   #contacto-cons,
   #contacto-des {
@@ -1077,17 +1073,19 @@ footer ul li {
       font-family: 'Dancing Script', cursive;
       font-size: 60px;
       font-weight: 600; }
-    .trabajo-inicio h2::after, .trabajo-inicio h2::before {
-      content: '';
-      position: absolute;
-      width: 120px;
-      height: 3px;
-      background-color: currentColor;
-      top: 0.6em; }
-    .trabajo-inicio h2::before {
-      left: -140px; }
-    .trabajo-inicio h2::after {
-      right: -140px; }
+      .trabajo-inicio h2::after, .trabajo-inicio h2::before {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em; }
+      .trabajo-inicio h2::before {
+        left: -140px; }
+      .trabajo-inicio h2::after {
+        right: -140px; }
+    .trabajo-inicio h3 {
+      font-size: 20px; }
     .trabajo-inicio p {
       width: 100%; }
   .destacados-inicio img {
@@ -1099,8 +1097,7 @@ footer ul li {
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
     font-weight: 600; }
-  .destacados-inicio h2::after,
-  .destacados-inicio h2::before {
+  .destacados-inicio h2::after, .destacados-inicio h2::before {
     content: '';
     position: absolute;
     width: 120px;
@@ -1121,18 +1118,18 @@ footer ul li {
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
     font-weight: 600; }
-  .titulo h2::after,
-  .titulo h2::before {
-    content: '';
-    position: absolute;
-    width: 120px;
-    height: 3px;
-    background-color: currentColor;
-    top: 0.6em; }
-  .titulo h2::before {
-    left: -140px; }
-  .titulo h2::after {
-    right: -140px; }
+    .titulo h2::after,
+    .titulo h2::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 3px;
+      background-color: currentColor;
+      top: 0.6em; }
+    .titulo h2::before {
+      left: -140px; }
+    .titulo h2::after {
+      right: -140px; }
   #imagen-1, #imagen-2, #imagen-3, #imagen-4, #imagen-5, #imagen-6, #imagen-7, #imagen-8, #imagen-9, #imagen-10, #imagen-11, #imagen-12, #imagen-13, #imagen-14 {
     grid-area: imagen-1;
     height: 300px;
@@ -1213,17 +1210,17 @@ footer ul li {
         font-family: 'Dancing Script', cursive;
         font-size: 60px;
         font-weight: 600; }
-      .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
-        content: '';
-        position: absolute;
-        width: 100px;
-        height: 3px;
-        background-color: currentColor;
-        top: 0.6em; }
-      .main-nuestro-trabajo .mensaje h2::before {
-        left: -120px; }
-      .main-nuestro-trabajo .mensaje h2::after {
-        right: -120px; }
+        .main-nuestro-trabajo .mensaje h2::after, .main-nuestro-trabajo .mensaje h2::before {
+          content: '';
+          position: absolute;
+          width: 100px;
+          height: 3px;
+          background-color: currentColor;
+          top: 0.6em; }
+        .main-nuestro-trabajo .mensaje h2::before {
+          left: -120px; }
+        .main-nuestro-trabajo .mensaje h2::after {
+          right: -120px; }
   /*Testimonios*/
   .testimonios {
     display: flex;
@@ -1250,7 +1247,7 @@ footer ul li {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    background-color: aliceblue;
+    background-color: red;
     width: 100%; }
     .contacto-info span {
       padding: 0px 10px; }
@@ -1260,11 +1257,6 @@ footer ul li {
       height: 50px;
       font-size: 25px; }
   .contacto {
-    background-image: url("../images/fondo-construccion.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     height: 450px;
     width: 100%; }
   .contacto div {

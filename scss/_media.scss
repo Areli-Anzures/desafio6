@@ -1,7 +1,7 @@
 /*media queries*/
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script');
 
-@media screen and (min-width: 1200px){
+/*Para laptop*/
+@media screen and (min-width: 1200px) {
 
     header {
         h1 {
@@ -50,29 +50,30 @@
     .trabajo-inicio {
         grid-area: trabajo-inicio;
 
-        h2{
+        h2 {
             display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 60px !important;
             font-weight: 600 !important;
-        }
 
-        h2::after,h2::before{
-            content:'';
-            position: absolute;
-            width: 120px !important;
-            height: 3px;
-            background-color: currentColor;
-            top: 0.6em;
-        }
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                width: 120px !important;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
 
-        h2::before{
-            left: -140px !important;
-        }
+            &::before {
+                left: -140px !important;
+            }
 
-        h2::after{
-            right: -140px !important;
+            &::after {
+                right: -140px !important;
+            }
         }
     }
 
@@ -190,30 +191,33 @@
             height: 350px;
         }
 
-        h2{
-            display:inline-block;
+        h2 {
+            display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 60px;
             font-weight: 600;
+
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
+
+            &::before {
+                left: -140px;
+            }
+
+            &::after {
+                right: -140px;
+            }
         }
 
-        h2::after,h2::before{
-            content:'';
-            position: absolute;
-            width: 120px;
-            height: 3px;
-            background-color: currentColor;
-            top: 0.6em;
-        }
 
-        h2::before{
-            left: -140px;
-        }
-
-        h2::after{
-            right: -140px;
-        }
     }
 
     /*Estilos de la página Nuestro Trabajo*/
@@ -224,34 +228,35 @@
             margin: 145px 0px 0px 0px !important;
             display: flex;
             justify-content: center;
-    
-            h2{
-                display:inline-block;
+
+            h2 {
+                display: inline-block;
                 position: relative;
                 font-family: 'Dancing Script', cursive;
                 font-size: 60px;
                 font-weight: 600;
+
+                &::after,
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 120px;
+                    height: 3px;
+                    background-color: currentColor;
+                    top: 0.6em;
+                }
+
+                &::before {
+                    left: -140px;
+                }
+
+                &::after {
+                    right: -140px;
+                }
             }
-    
-            h2::after,h2::before{
-                content:'';
-                position: absolute;
-                width: 120px;
-                height: 3px;
-                background-color: currentColor;
-                top: 0.6em;
-            }
-    
-            h2::before{
-                left: -140px;
-            }
-    
-            h2::after{
-                right: -140px;
-            }
-    
         }
     }
+
     .main-nuestro-trabajo .container {
         margin: 0px !important;
         width: 100%;
@@ -282,18 +287,18 @@
     }
 
     /*Testimonios*/
-    .testimonios{
+    .testimonios {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        
+
     }
 
     .testimonio {
         padding: 20px 50px;
         justify-content: flex-start;
-        
-        p{
+
+        p {
             text-align: left;
         }
     }
@@ -318,29 +323,30 @@
 
 
     .titulo {
-        h2{
-            display:inline-block;
+        h2 {
+            display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 60px;
             font-weight: 600;
-        }
 
-        h2::after,h2::before{
-            content:'';
-            position: absolute;
-            width: 120px;
-            height: 3px;
-            background-color: currentColor;
-            top: 0.6em;
-        }
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
 
-        h2::before{
-            left: -140px;
-        }
+            &::before {
+                left: -140px;
+            }
 
-        h2::after{
-            right: -140px;
+            &::after {
+                right: -140px;
+            }
         }
     }
 
@@ -352,7 +358,7 @@
             "imagen-7 imagen-8 imagen-8 imagen-9"
             "imagen-7 imagen-10 imagen-11 imagen-12"
             "imagen-13 imagen-13 imagen-14 imagen-14"
-        !important;
+             !important;
     }
 
     @mixin size ($alto, $ancho) {
@@ -530,7 +536,7 @@
 
     /*Estilos para página de contacto*/
     .main-contacto {
-        padding: 135px 0px 25px 0px;
+        padding: 120px 0px 25px 0px !important;
         height: auto;
         width: auto;
     }
@@ -541,21 +547,18 @@
             height: 500px;
             width: 450px;
             cursor: pointer;
+
+            &:hover {
+                overflow: hidden;
+                transform: translate3d(50px, 15px, 50px);
+            }
         }
 
-        img:hover {
-            overflow: hidden;
-            transform: translate3d(50px, 15px, 50px);
-        }
+
     }
 
     .contacto {
-        background-image: url("../images/fondo-construccion.jpg");
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        height: 550px;
+        height: 570px !important;
         width: 100%;
     }
 
@@ -602,7 +605,7 @@
 }
 
 /*Tablets*/
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 
     header {
         h1 {
@@ -644,39 +647,45 @@
         grid-template-areas:
             "trabajo-inicio trabajo-inicio"
             "secc-izq secc-der";
-
     }
 
     .trabajo-inicio {
         width: 100%;
         grid-area: trabajo-inicio;
 
-        h2{
+        h2 {
             display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 60px;
             font-weight: 600;
+
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
+
+            &::before {
+                left: -140px;
+            }
+
+            &::after {
+                right: -140px;
+            }
         }
 
-        h2::after,h2::before{
-            content:'';
-            position: absolute;
-            width: 120px;
-            height: 3px;
-            background-color: currentColor;
-            top: 0.6em;
+        h3 {
+            font-size: 20px;
         }
 
-        h2::before{
-            left: -140px;
-        }
 
-        h2::after{
-            right: -140px;
-        }
 
-        p{
+        p {
             width: 100%;
         }
     }
@@ -687,16 +696,17 @@
             width: 100%;
         }
 
-        h2{
-            display:inline-block;
+        h2 {
+            display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 60px;
             font-weight: 600;
         }
 
-        h2::after,h2::before{
-            content:'';
+        h2::after,
+        h2::before {
+            content: '';
             position: absolute;
             width: 120px;
             height: 3px;
@@ -704,11 +714,11 @@
             top: 0.6em;
         }
 
-        h2::before{
+        h2::before {
             left: -140px;
         }
 
-        h2::after{
+        h2::after {
             right: -140px;
         }
     }
@@ -731,30 +741,33 @@
     }
 
     .titulo {
-        h2{
-            display:inline-block;
+        h2 {
+            display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 60px;
             font-weight: 600;
+
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
+
+            &::before {
+                left: -140px;
+            }
+
+            &::after {
+                right: -140px;
+            }
         }
 
-        h2::after,h2::before{
-            content:'';
-            position: absolute;
-            width: 120px;
-            height: 3px;
-            background-color: currentColor;
-            top: 0.6em;
-        }
 
-        h2::before{
-            left: -140px;
-        }
-
-        h2::after{
-            right: -140px;
-        }
     }
 
     @mixin size ($alto, $ancho) {
@@ -863,47 +876,48 @@
             margin: 155px 0px 0px 0px !important;
             display: flex;
             justify-content: center;
-    
-            h2{
-                display:inline-block;
+
+            h2 {
+                display: inline-block;
                 position: relative;
                 font-family: 'Dancing Script', cursive;
                 font-size: 60px;
                 font-weight: 600;
+
+                &::after,
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100px;
+                    height: 3px;
+                    background-color: currentColor;
+                    top: 0.6em;
+                }
+
+                &::before {
+                    left: -120px;
+                }
+
+                &::after {
+                    right: -120px;
+                }
             }
-    
-            h2::after,h2::before{
-                content:'';
-                position: absolute;
-                width: 100px;
-                height: 3px;
-                background-color: currentColor;
-                top: 0.6em;
-            }
-    
-            h2::before{
-                left: -120px;
-            }
-    
-            h2::after{
-                right: -120px;
-            }
-    
         }
     }
+
     /*Testimonios*/
-    .testimonios{
+    .testimonios {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        
+
     }
 
     .testimonio {
         padding: 20px 30px;
         justify-content: flex-start;
 
-        p{
+        p {
             text-align: left;
         }
     }
@@ -928,7 +942,7 @@
         align-items: center;
         justify-content: space-around;
         padding: 20px;
-        background-color: aliceblue;
+        background-color: rgb(255, 0, 0);
         width: 100%;
 
         span {
@@ -946,11 +960,6 @@
     }
 
     .contacto {
-        background-image: url("../images/fondo-construccion.jpg");
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
         height: 450px;
         width: 100%;
     }

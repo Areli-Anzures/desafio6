@@ -12,7 +12,7 @@
 .mensaje-inicio {
     background-color: black;
     height: 350px;
-    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,17 +25,17 @@
         font-weight: 500;
         position: relative;
         text-align: center;
-        padding-top: 25px;
+        padding-top: 32px;
 
         &::before {
             content: "";
             display: block;
             position: absolute;
             z-index: 2;
-            top: -6vmin;
-            left: 5vmin;
-            width: 40vmin;
-            height: 40vmin;
+            top: -5vmin;
+            left: 3.5vmin;
+            width: 35vmin;
+            height: 35vmin;
             border-radius: 50%;
             border: 0.8vmin solid white;
             box-sizing: border-box;
@@ -254,24 +254,24 @@
         position: relative;
         font-family: 'Dancing Script', cursive;
         font-weight: 400;
-    }
 
-    h2::after,
-    h2::before {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 3px;
-        background-color: currentColor;
-        top: 0.6em;
-    }
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: currentColor;
+            top: 0.6em;
+        }
 
-    h2::before {
-        left: -40px;
-    }
+        &::before {
+            left: -40px;
+        }
 
-    h2::after {
-        right: -40px;
+        &::after {
+            right: -40px;
+        }
     }
 
     p {

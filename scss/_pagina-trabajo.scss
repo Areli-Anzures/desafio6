@@ -1,5 +1,4 @@
 /* Pagina nuestro trabajo*/
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script');
 .main-nuestro-trabajo {
     width: 100%;
 
@@ -8,31 +7,31 @@
         display: flex;
         justify-content: center;
 
-        h2{
-            display:inline-block;
+        h2 {
+            display: inline-block;
             position: relative;
             font-family: 'Dancing Script', cursive;
             font-size: 25px;
             font-weight: 400;
-        }
 
-        h2::after,h2::before{
-            content:'';
-            position: absolute;
-            width: 30px;
-            height: 3px;
-            background-color: currentColor;
-            top: 0.6em;
-        }
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                width: 30px;
+                height: 3px;
+                background-color: currentColor;
+                top: 0.6em;
+            }
 
-        h2::before{
-            left: -40px;
-        }
+            &::before {
+                left: -40px;
+            }
 
-        h2::after{
-            right: -40px;
+            &::after {
+                right: -40px;
+            }
         }
-
     }
 }
 
