@@ -1,7 +1,7 @@
 /*media queries*/
 
 /*Para laptop*/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
 
     header {
         h1 {
@@ -20,7 +20,7 @@
     /*Estilos del main: Página de inicio*/
     .main-inicio {
         width: 100%;
-        padding-top: 138px;
+        padding-top: 148px;
 
         p {
             font-size: $letra-cuerpo-md;
@@ -28,13 +28,15 @@
     }
 
     .mensaje-inicio {
-        height: 490px;
+        height: 550px;
 
-        h2::before {
-            top: -1.5vmin;
-            left: 1vmin;
-            width: 20vmin;
-            height: 20vmin;
+        span {
+            padding-top: 15px;
+            font-size: 65px;
+        }
+
+        img {
+            padding-top: 100px;
         }
     }
 
@@ -541,25 +543,23 @@
         width: auto;
     }
 
-    #contacto-cons {
-
-        img {
-            height: 500px;
+    .contacto-mensaje {
+        padding-top: 30px;
+        background-image: url(../images/fondo-contacto.jpg);
+    
+        .contacto-mensaje-texto {
+            padding-top: 70px;
+            height: 450px;
             width: 450px;
-            cursor: pointer;
 
-            &:hover {
-                overflow: hidden;
-                transform: translate3d(50px, 15px, 50px);
+            h2 {
+                font-size: 30px;
+            }
+    
+            p {
+                font-size: 25px;
             }
         }
-
-
-    }
-
-    .contacto {
-        height: 570px !important;
-        width: 100%;
     }
 
 
@@ -580,7 +580,7 @@
         align-items: center;
         justify-content: space-around;
         padding: 20px;
-        background-color: aliceblue;
+        background-color: rgb(255, 0, 0);
         width: 100%;
 
         span {
@@ -605,7 +605,7 @@
 }
 
 /*Tablets*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 400px) and (max-width: 899px) {
 
     header {
         h1 {
@@ -653,30 +653,8 @@
         width: 100%;
         grid-area: trabajo-inicio;
 
-        h2 {
-            display: inline-block;
-            position: relative;
-            font-family: 'Dancing Script', cursive;
-            font-size: 60px;
-            font-weight: 600;
-
-            &::after,
-            &::before {
-                content: '';
-                position: absolute;
-                width: 120px;
-                height: 3px;
-                background-color: currentColor;
-                top: 0.6em;
-            }
-
-            &::before {
-                left: -140px;
-            }
-
-            &::after {
-                right: -140px;
-            }
+        img {
+            padding-top: 10px;
         }
 
         h3 {
@@ -930,10 +908,31 @@
 
     /*Estilos para página de contacto*/
     .main-contacto {
+        padding-top: 140px;
         display: flex;
         flex-direction: column;
         align-items: center;
         align-content: center;
+    }
+
+    .contacto-mensaje {
+        height: 500px;
+        width: 100%;
+        background-image: url(../images/fondo-contacto.jpg);
+    
+        .contacto-mensaje-texto {
+            padding-top: 70px;
+            height: 400px;
+            width: 425px;
+
+            h2 {
+                font-size: 25px;
+            }
+    
+            p {
+                font-size: 22px;
+            }
+        }
     }
 
     .contacto-info {

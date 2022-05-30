@@ -61,32 +61,14 @@ a {
 /*se agrega imagen de fondo*/
 .mensaje-inicio {
   background-color: black;
-  height: 350px;
+  height: 450px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center; }
-  .mensaje-inicio h2 {
-    font-family: 'Josefin Sans', sans-serif;
-    color: white;
-    font-size: 30px;
-    font-weight: 500;
-    position: relative;
-    text-align: center;
-    padding-top: 32px; }
-    .mensaje-inicio h2::before {
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: -5vmin;
-      left: 3.5vmin;
-      width: 35vmin;
-      height: 35vmin;
-      border-radius: 50%;
-      border: 0.8vmin solid white;
-      box-sizing: border-box; }
+  .mensaje-inicio img {
+    padding-top: 30px; }
 
 /*uso de mixins*/
 :root {
@@ -484,7 +466,7 @@ a {
 
 /*Estilos para página de contacto*/
 .main-contacto {
-  padding: 160px 0px 10px 0px;
+  padding: 155px 0px 10px 0px;
   height: auto;
   width: 100%;
   display: flex;
@@ -492,27 +474,28 @@ a {
   align-items: center;
   align-content: center; }
 
-#contacto-cons img {
-  height: 300px;
-  width: 300px; }
-
-#contacto-des {
-  display: flex;
-  flex-direction: column;
-  background-size: 200px; }
-  #contacto-des p {
-    text-align: left;
-    font-family: font-family "Lucida Sans";
-    font-size: 20px; }
-
-.contacto {
-  height: 560px;
+.contacto-mensaje {
+  height: 500px;
   width: 100%;
+  background-image: url(../images/fondo-contacto.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: center; }
+  .contacto-mensaje .contacto-mensaje-texto {
+    padding-top: 70px;
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border-radius: 50%; }
+    .contacto-mensaje .contacto-mensaje-texto h2 {
+      font-size: 20px;
+      text-align: center; }
+    .contacto-mensaje .contacto-mensaje-texto p {
+      font-size: 18px;
+      text-align: center; }
 
 .contacto-info {
   display: flex;
@@ -524,7 +507,8 @@ a {
   width: 100%; }
   .contacto-info p {
     height: 30px;
-    font-size: 20px; }
+    font-size: 20px;
+    color: white; }
 
 .contacto-form h2 {
   text-align: center; }
@@ -664,7 +648,7 @@ footer ul li {
 
 /*media queries*/
 /*Para laptop*/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
   header h1 {
     font-size: 35px; }
   h2 {
@@ -674,16 +658,16 @@ footer ul li {
   /*Estilos del main: Página de inicio*/
   .main-inicio {
     width: 100%;
-    padding-top: 138px; }
+    padding-top: 148px; }
     .main-inicio p {
       font-size: 25px; }
   .mensaje-inicio {
-    height: 490px; }
-    .mensaje-inicio h2::before {
-      top: -1.5vmin;
-      left: 1vmin;
-      width: 20vmin;
-      height: 20vmin; }
+    height: 550px; }
+    .mensaje-inicio span {
+      padding-top: 15px;
+      font-size: 65px; }
+    .mensaje-inicio img {
+      padding-top: 100px; }
   /*se acomodan las imagenes*/
   .contenedor-trabajo-inicio {
     display: grid;
@@ -1003,16 +987,17 @@ footer ul li {
     padding: 120px 0px 25px 0px !important;
     height: auto;
     width: auto; }
-  #contacto-cons img {
-    height: 500px;
-    width: 450px;
-    cursor: pointer; }
-    #contacto-cons img:hover {
-      overflow: hidden;
-      transform: translate3d(50px, 15px, 50px); }
-  .contacto {
-    height: 570px !important;
-    width: 100%; }
+  .contacto-mensaje {
+    padding-top: 30px;
+    background-image: url(../images/fondo-contacto.jpg); }
+    .contacto-mensaje .contacto-mensaje-texto {
+      padding-top: 70px;
+      height: 450px;
+      width: 450px; }
+      .contacto-mensaje .contacto-mensaje-texto h2 {
+        font-size: 30px; }
+      .contacto-mensaje .contacto-mensaje-texto p {
+        font-size: 25px; }
   #contacto-cons,
   #contacto-des {
     background-size: 400px;
@@ -1026,7 +1011,7 @@ footer ul li {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    background-color: aliceblue;
+    background-color: red;
     width: 100%; }
     .contacto-info span {
       padding: 0px 10px; }
@@ -1040,7 +1025,7 @@ footer ul li {
     margin: 25px; } }
 
 /*Tablets*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 400px) and (max-width: 899px) {
   header h1 {
     font-size: 35px; }
   /*Barra de navegación, tipo de letra, tamaño, etc..*/
@@ -1067,23 +1052,8 @@ footer ul li {
   .trabajo-inicio {
     width: 100%;
     grid-area: trabajo-inicio; }
-    .trabajo-inicio h2 {
-      display: inline-block;
-      position: relative;
-      font-family: 'Dancing Script', cursive;
-      font-size: 60px;
-      font-weight: 600; }
-      .trabajo-inicio h2::after, .trabajo-inicio h2::before {
-        content: '';
-        position: absolute;
-        width: 120px;
-        height: 3px;
-        background-color: currentColor;
-        top: 0.6em; }
-      .trabajo-inicio h2::before {
-        left: -140px; }
-      .trabajo-inicio h2::after {
-        right: -140px; }
+    .trabajo-inicio img {
+      padding-top: 10px; }
     .trabajo-inicio h3 {
       font-size: 20px; }
     .trabajo-inicio p {
@@ -1237,10 +1207,23 @@ footer ul li {
     align-items: flex-end; }
   /*Estilos para página de contacto*/
   .main-contacto {
+    padding-top: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center; }
+  .contacto-mensaje {
+    height: 500px;
+    width: 100%;
+    background-image: url(../images/fondo-contacto.jpg); }
+    .contacto-mensaje .contacto-mensaje-texto {
+      padding-top: 70px;
+      height: 400px;
+      width: 425px; }
+      .contacto-mensaje .contacto-mensaje-texto h2 {
+        font-size: 25px; }
+      .contacto-mensaje .contacto-mensaje-texto p {
+        font-size: 22px; }
   .contacto-info {
     display: flex;
     flex-direction: row;

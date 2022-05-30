@@ -1,6 +1,6 @@
 /*Estilos para página de contacto*/
 .main-contacto {
-    padding: 160px 0px 10px 0px;
+    padding: 155px 0px 10px 0px;
     height: auto;
     width: 100%;
     display: flex;
@@ -9,33 +9,33 @@
     align-content: center;
 }
 
-#contacto-cons {
-    img {
-        height: 300px;
-        width: 300px;
-    }
-}
-
-#contacto-des {
-    display: flex;
-    flex-direction: column;
-    background-size: 200px;
-
-    p {
-        text-align: left;
-        font-family: $tipo-letra;
-        font-size: $letra-cuerpo-sm;
-    }
-}
-
-.contacto {
-    height: 560px;
+.contacto-mensaje {
+    height: 500px;
     width: 100%;
+    background-image: url(../images/fondo-contacto.jpg);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
+
+    .contacto-mensaje-texto {
+        padding-top: 70px;
+        height: 300px;
+        width: 300px;
+        background-color: white;
+        border-radius: 50%;
+        h2 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: center;
+        }
+    }
 }
 
 .contacto-info {
@@ -50,6 +50,7 @@
     p {
         height: 30px;
         font-size: $letra-cuerpo-sm;
+        color: rgb(255, 255, 255);
     }
 }
 

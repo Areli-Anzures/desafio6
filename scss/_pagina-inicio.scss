@@ -11,37 +11,16 @@
 /*se agrega imagen de fondo*/
 .mensaje-inicio {
     background-color: black;
-    height: 350px;
+    height: 450px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
 
-    h2 {
-        font-family: 'Josefin Sans', sans-serif;
-        color: white;
-        font-size: 30px;
-        font-weight: 500;
-        position: relative;
-        text-align: center;
-        padding-top: 32px;
-
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            z-index: 2;
-            top: -5vmin;
-            left: 3.5vmin;
-            width: 35vmin;
-            height: 35vmin;
-            border-radius: 50%;
-            border: 0.8vmin solid white;
-            box-sizing: border-box;
-        }
+    img {
+        padding-top: 30px;
     }
-
 }
 
 /*uso de mixins*/
